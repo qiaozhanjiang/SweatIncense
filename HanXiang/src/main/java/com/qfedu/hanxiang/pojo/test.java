@@ -1,4 +1,4 @@
 package com.qfedu.hanxiang.pojo;
 
-public class text {
+public class test {
 }

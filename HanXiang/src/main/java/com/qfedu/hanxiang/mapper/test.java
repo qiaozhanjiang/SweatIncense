@@ -1,4 +1,4 @@
 package com.qfedu.hanxiang.mapper;
 
-public class text {
+public class test {
 }
