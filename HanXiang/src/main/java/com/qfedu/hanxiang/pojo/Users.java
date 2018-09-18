@@ -1,4 +1,5 @@
 package com.qfedu.hanxiang.pojo;
 
-public class test {
+public class Users {
+
 }
