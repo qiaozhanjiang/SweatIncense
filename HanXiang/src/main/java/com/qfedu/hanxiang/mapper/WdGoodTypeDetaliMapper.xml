@@ -80,6 +80,6 @@
     where Id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectAll" resultType="list">
-    SELECT ID,GTDNAME FROM t_wdgoodtypedetali WHERE GTID = #{ID} AND FLAG = 1
+    SELECT ID,GTDNAME FROM t_wdgoodtypedetali WHERE GTID = #{id} AND FLAG = 1
   </select>
 </mapper>

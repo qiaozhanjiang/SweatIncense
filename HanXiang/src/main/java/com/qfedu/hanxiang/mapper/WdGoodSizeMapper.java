@@ -2,6 +2,8 @@ package com.qfedu.hanxiang.mapper;
 
 import com.qfedu.hanxiang.pojo.WdGoodSize;
 
+import java.util.List;
+
 public interface WdGoodSizeMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,7 @@ public interface WdGoodSizeMapper {
     int updateByPrimaryKeySelective(WdGoodSize record);
 
     int updateByPrimaryKey(WdGoodSize record);
+
+    List<WdGoodSize> selectAll(int id);
+
 }
