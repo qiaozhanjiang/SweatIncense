@@ -66,4 +66,7 @@
       flag = #{flag,jdbcType=INTEGER}
     where Id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" resultType="list">
+    SELECT ID, GTNAME FROM t_wdgoodtype WHERE FLAG = 1
+  </select>
 </mapper>
