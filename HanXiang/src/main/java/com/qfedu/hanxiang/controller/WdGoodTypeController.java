@@ -21,7 +21,7 @@ public class WdGoodTypeController {
     public RList<WdGoodType> goodTypeRList() {
         List<WdGoodType> wdGoodTypes = wdGoodTypeService.queryAll();
         if (wdGoodTypes != null) {
-            RList<WdGoodType> rList = new RList<>(0, "成功", wdGoodTypes);
+            RList<WdGoodType> rList = new RList(0, "成功", wdGoodTypes);
             return rList;
         } else {
             return RList.error();
