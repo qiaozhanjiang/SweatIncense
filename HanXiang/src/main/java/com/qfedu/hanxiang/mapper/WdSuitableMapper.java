@@ -2,6 +2,8 @@ package com.qfedu.hanxiang.mapper;
 
 import com.qfedu.hanxiang.pojo.WdSuitable;
 
+import java.util.List;
+
 public interface WdSuitableMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,6 @@ public interface WdSuitableMapper {
     int updateByPrimaryKeySelective(WdSuitable record);
 
     int updateByPrimaryKey(WdSuitable record);
+
+    List<WdSuitable> selectAll(int id);
 }

@@ -2,8 +2,10 @@ package com.qfedu.hanxiang.controller;
 
 import com.qfedu.hanxiang.pojo.WdGoodSize;
 import com.qfedu.hanxiang.pojo.WdGoodTypeDetali;
+import com.qfedu.hanxiang.pojo.WdSuitable;
 import com.qfedu.hanxiang.service.WdGoodSizeService;
 import com.qfedu.hanxiang.service.WdGoodTypeDetailService;
+import com.qfedu.hanxiang.service.WdSuitableService;
 import com.qfedu.hanxiang.vo.RList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,9 @@ public class WdGoodTypeDetalisController {
 
     @Autowired
     private WdGoodSizeService wdGoodSizeService;
+
+    @Autowired
+    private WdSuitableService wdSuitableService;
 
 
     @RequestMapping("/goodtypedetail.do")
@@ -39,11 +44,22 @@ public class WdGoodTypeDetalisController {
     public RList<WdGoodSize> sizeRList(int id) {
         List<WdGoodSize> wdGoodSizes = wdGoodSizeService.queryAll(id);
         if (wdGoodSizes != null) {
-            RList<WdGoodSize> rList = new RList<>(0, "成功", wdGoodSizes);
+            RList<WdGoodSize> rList = new RList(0, "成功", wdGoodSizes);
             return rList;
         } else {
             return RList.error();
         }
     }
 
+    @RequestMapping("/goodsuitable.do")
+    @ResponseBody
+    public  RList<WdSuitable> suitableRList(int id) {
+        List<WdSuitable> wdSuitables = wdSuitableService.queryAll(id);
+        if (wdSuitables != null) {
+            RList<WdSuitable> rList = new RList(0, "成功", wdSuitables);
+            return rList;
+        } else {
+            return RList.error();
+        }
+    }
 }

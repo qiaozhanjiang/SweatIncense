@@ -79,4 +79,7 @@
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" resultType="list">
+    SELECT ID, SEX FROM t_wdsuitable WHERE GTID = #{id} AND FLAG = 1
+  </select>
 </mapper>
