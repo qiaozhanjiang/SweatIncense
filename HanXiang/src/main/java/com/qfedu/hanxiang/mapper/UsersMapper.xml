@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qfedu.hanxiang.mapper.UsersMapper">
 	<resultMap id="BaseResultMap"
-		type="com.qfedu.hanxiang.pojo.Users">
+			   type="com.qfedu.hanxiang.pojo.Users">
 		<id column="uuid" property="uuid" jdbcType="CHAR" />
 		<result column="username" property="username" jdbcType="CHAR" />
 		<result column="password" property="password" jdbcType="CHAR" />
 		<result column="newPassword" property="newpassword"
-			jdbcType="VARCHAR" />
+				jdbcType="VARCHAR" />
 		<result column="gender" property="gender" jdbcType="CHAR" />
 		<result column="address" property="address" jdbcType="CHAR" />
 		<result column="tel" property="tel" jdbcType="CHAR" />
@@ -22,7 +22,7 @@
 
 
 	<select id="updateByUser"
-		parameterType="com.qfedu.hanxiang.pojo.Users">
+			parameterType="com.qfedu.hanxiang.pojo.Users">
 
 		select * from users
 
@@ -44,7 +44,7 @@
 
 
 	<update id="updateByUser"
-		parameterType="com.qfedu.hanxiang.pojo.Users">
+			parameterType="com.qfedu.hanxiang.pojo.Users">
 		update users
 		<set>
 			<if test="newPassword != null">

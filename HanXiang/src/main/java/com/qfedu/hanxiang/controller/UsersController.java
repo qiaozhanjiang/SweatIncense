@@ -27,21 +27,18 @@ import javax.servlet.http.HttpSession;
 public class UsersController {
 	@Resource
 	private UsersService usersService;
-	
-	
+
+
 	// 注册账号
 	@RequestMapping("/register.do")
 	public void register(Users user, HttpServletRequest req, HttpServletResponse resp) {
-
-		JS<Users> js = usersService.save(user);
-		String ret = JSON.toJSONString(js);
 		try {
-			resp.getWriter().print(ret);
+			resp.getWriter().print(usersService.register(user));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// 登录
 	@RequestMapping("/login.do")
 	public void userLogin(Users user, HttpServletResponse resp) {
@@ -51,7 +48,7 @@ public class UsersController {
 			e.printStackTrace();
 		}
 	}
-		
+
 	// 修改资料
 	@RequestMapping("/update.do")
 	public void update(Users user, MultipartFile files, HttpServletRequest req, HttpServletResponse resp) {
@@ -61,7 +58,7 @@ public class UsersController {
 			e.printStackTrace();
 		}
 	}
-			
+
 	//XXX 退出--- 这里到 redis 删除token
 	@RequestMapping("/loginOut.do")
 	public void userLoginOut(HttpSession session, HttpServletResponse resp) {
@@ -70,16 +67,16 @@ public class UsersController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}	
-			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}
+
+
+
+
+
+
+
+
+
+
+
 }
