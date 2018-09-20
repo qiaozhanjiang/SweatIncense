@@ -2,6 +2,8 @@ package com.qfedu.hanxiang.mapper;
 
 import com.qfedu.hanxiang.pojo.WdBrand;
 
+import java.util.List;
+
 public interface WdBrandMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,7 @@ public interface WdBrandMapper {
     int updateByPrimaryKeySelective(WdBrand record);
 
     int updateByPrimaryKey(WdBrand record);
+
+    List<WdBrand> selectAll(int id);
+
 }

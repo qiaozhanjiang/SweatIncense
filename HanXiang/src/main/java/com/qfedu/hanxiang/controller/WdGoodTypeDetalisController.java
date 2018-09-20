@@ -1,8 +1,10 @@
 package com.qfedu.hanxiang.controller;
 
+import com.qfedu.hanxiang.pojo.WdBrand;
 import com.qfedu.hanxiang.pojo.WdGoodSize;
 import com.qfedu.hanxiang.pojo.WdGoodTypeDetali;
 import com.qfedu.hanxiang.pojo.WdSuitable;
+import com.qfedu.hanxiang.service.WdBrandService;
 import com.qfedu.hanxiang.service.WdGoodSizeService;
 import com.qfedu.hanxiang.service.WdGoodTypeDetailService;
 import com.qfedu.hanxiang.service.WdSuitableService;
@@ -25,6 +27,9 @@ public class WdGoodTypeDetalisController {
 
     @Autowired
     private WdSuitableService wdSuitableService;
+
+    @Autowired
+    private WdBrandService wdBrandService;
 
 
     @RequestMapping("/goodtypedetail.do")
@@ -62,4 +67,17 @@ public class WdGoodTypeDetalisController {
             return RList.error();
         }
     }
+
+    @RequestMapping("/goodbrand.do")
+    @ResponseBody
+    public RList<WdBrand> brandRList(int id) {
+        List<WdBrand> wdBrands = wdBrandService.queryAll(id);
+        if (wdBrands != null) {
+            RList<WdBrand> rList = new RList<>(0, "成功", wdBrands);
+            return  rList;
+        } else {
+            return RList.error();
+        }
+    }
+
 }

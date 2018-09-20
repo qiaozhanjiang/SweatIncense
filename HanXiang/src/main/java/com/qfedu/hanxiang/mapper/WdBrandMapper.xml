@@ -79,4 +79,7 @@
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAll" resultType="list">
+    SELECT ID, BRAND FROM t_wdbrand WHERE ID = #{id} AND FLAG = 1
+  </select>
 </mapper>
